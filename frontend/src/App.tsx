@@ -17,6 +17,7 @@ function App() {
       const content = await response.json();
 
       setName(content.name);
+      console.log("1:" + name);
     })();
   });
 

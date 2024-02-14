@@ -20,7 +20,7 @@ var app = builder.Build();
 //app.UseHttpsRedirection();
 
 app.UseCors(options => options
-.WithOrigins(new[] {"http://localhost:3000" } )
+.WithOrigins(new[] {"http://localhost:3000", "http://10.188.50.66:3000" } )
 .AllowAnyHeader()
 .AllowAnyMethod()
 .AllowCredentials()

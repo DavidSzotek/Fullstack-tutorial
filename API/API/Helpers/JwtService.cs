@@ -1,5 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 
 namespace API.Helpers
@@ -14,6 +15,8 @@ namespace API.Helpers
             var header = new JwtHeader(credentials);
 
             var payload = new JwtPayload(id.ToString(), null, null, null, DateTime.Today.AddDays(1));
+            // Use JwtPayload for Claim
+            var pl = new JwtPayload();
             var securityToken = new JwtSecurityToken(header, payload);
 
             return new JwtSecurityTokenHandler().WriteToken(securityToken);
